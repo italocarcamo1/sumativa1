@@ -1,0 +1,70 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.calcula {
+    margin-top: 50px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ti {
+    text-align: center;
+}
+
+/* Estilos para los campos de entrada y etiquetas */
+.input-container {
+    margin-bottom: 20px;
+}
+
+.la {
+    font-weight: bold;
+}
+
+.inp {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Estilos para los botones de radio y etiquetas */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para el botón de enviar */
+#envio {
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#envi:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el resultado y mensaje de error */
+.resultado,
+.error {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #0056b3;
+    font-size: 50px;
+}
+

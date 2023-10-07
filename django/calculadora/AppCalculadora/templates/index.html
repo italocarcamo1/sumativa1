@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <div class="calcula">
+        <div class="ti">
+            <h2>Calculadora</h2>
+            <hr>
+        </div>
+        <form method="POST" action="{% url 'AppCalculadora' %}">
+            {% csrf_token %}
+
+            <div class="input-container">
+                <label class="la" for="num1">Número 1</label>
+                <input class="inp" type="text" name="num1" placeholder="Ingrese el primer número" required>
+            </div>
+
+            <div class="input-container">
+                <label class="la" for="num2">Número 2</label>
+                <input class="inp" type="text" name="num2" placeholder="Ingrese el segundo número" required>
+            </div>
+            
+            <div id="op" class="radio-group">
+                <label id="sum" for="suma">Sumar +</label>
+                <input type="radio" name="operador" id="suma" value="suma">
+                
+                <label for="resta">Restar -</label>
+                <input type="radio" name="operador" id="resta" value="resta">
+                
+                <label for="multiplicacion">Multiplicar *</label>
+                <input type="radio" name="operador" id="multiplicacion" value="multiplicacion">
+                
+                <label for="division">Dividir /</label>
+                <input type="radio" name="operador" id="division" value="division">
+            </div>
+
+            <button id="envio" type="submit">Calcular</button>
+        </form>
+
+        {% if resultado is not None %}
+        <div class="resultado">
+            Resultado: <p>{{ resultado|floatformat:"0" }}</p>
+        </div>
+        {% endif %}
+
+        {% if mensaje_error %}
+        <div class="error">
+            {{ mensaje_error }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
